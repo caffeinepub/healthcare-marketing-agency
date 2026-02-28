@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cabinet Grotesk - Display/Headings */
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src: url("/assets/fonts/CabinetGrotesk-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* Figtree - Body */
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree-Variable.woff2") format("woff2");
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Healthcare Green Palette */
+    --background: 0.98 0.005 120;
+    --foreground: 0.15 0.025 145;
+
+    --card: 1 0 0;
+    --card-foreground: 0.15 0.025 145;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.15 0.025 145;
+
+    /* Deep Forest Green Primary */
+    --primary: 0.38 0.12 155;
+    --primary-foreground: 0.98 0.005 120;
+
+    --secondary: 0.94 0.02 140;
+    --secondary-foreground: 0.25 0.06 150;
+
+    --muted: 0.95 0.01 140;
+    --muted-foreground: 0.5 0.03 145;
+
+    /* Gold Accent */
+    --accent: 0.72 0.14 75;
+    --accent-foreground: 0.15 0.04 75;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.88 0.02 140;
+    --input: 0.88 0.02 140;
+    --ring: 0.38 0.12 155;
+
+    --chart-1: 0.38 0.12 155;
+    --chart-2: 0.72 0.14 75;
+    --chart-3: 0.55 0.1 200;
+    --chart-4: 0.65 0.15 120;
+    --chart-5: 0.45 0.08 155;
+
+    --sidebar: 0.15 0.04 155;
+    --sidebar-foreground: 0.95 0.01 120;
+    --sidebar-primary: 0.72 0.14 75;
+    --sidebar-primary-foreground: 0.15 0.04 75;
+    --sidebar-accent: 0.25 0.07 150;
+    --sidebar-accent-foreground: 0.95 0.01 120;
+    --sidebar-border: 0.25 0.06 150;
+    --sidebar-ring: 0.72 0.14 75;
+
+    /* Custom tokens */
+    --green-deep: 0.28 0.1 155;
+    --green-medium: 0.38 0.12 155;
+    --green-light: 0.55 0.1 155;
+    --green-pale: 0.92 0.04 140;
+    --gold: 0.72 0.14 75;
+    --gold-light: 0.88 0.1 80;
+    --cream: 0.98 0.005 120;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Figtree", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Cabinet Grotesk", sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Cabinet Grotesk", sans-serif;
+  }
+
+  .font-body {
+    font-family: "Figtree", sans-serif;
+  }
+
+  .text-green-deep {
+    color: oklch(var(--green-deep));
+  }
+
+  .bg-green-deep {
+    background-color: oklch(var(--green-deep));
+  }
+
+  .text-green-medium {
+    color: oklch(var(--green-medium));
+  }
+
+  .bg-green-medium {
+    background-color: oklch(var(--green-medium));
+  }
+
+  .text-gold {
+    color: oklch(var(--gold));
+  }
+
+  .bg-gold {
+    background-color: oklch(var(--gold));
+  }
+
+  .bg-green-pale {
+    background-color: oklch(var(--green-pale));
+  }
+
+  .bg-cream {
+    background-color: oklch(var(--cream));
+  }
+
+  .hero-mesh {
+    background:
+      radial-gradient(ellipse 80% 60% at 60% 40%, oklch(0.88 0.06 155 / 0.4) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 80% at 10% 70%, oklch(0.85 0.04 140 / 0.3) 0%, transparent 50%),
+      oklch(var(--cream));
+  }
+
+  .dark-section {
+    background: oklch(var(--green-deep));
+    color: oklch(var(--cream));
+  }
+
+  .gradient-cta {
+    background: linear-gradient(135deg, oklch(var(--green-deep)) 0%, oklch(var(--green-medium)) 100%);
+  }
+
+  .card-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px -8px oklch(var(--green-deep) / 0.2);
+  }
+
+  .whatsapp-btn {
+    background-color: #25D366;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  }
+
+  .whatsapp-btn:hover {
+    background-color: #1da851;
+    transform: scale(1.05);
+    box-shadow: 0 6px 28px rgba(37, 211, 102, 0.5);
+  }
+}
