@@ -17,14 +17,12 @@ import {
 } from "@/components/ui/select";
 import { Toaster } from "@/components/ui/sonner";
 import {
-  Award,
   BarChart3,
   Calendar,
   CheckCircle2,
   ChevronRight,
   Clock,
   Globe,
-  HeartPulse,
   Loader2,
   MessageCircle,
   MessageSquare,
@@ -32,9 +30,9 @@ import {
   Search,
   Shield,
   Star,
-  Target,
   TrendingUp,
   Users,
+  UtensilsCrossed,
   Zap,
 } from "lucide-react";
 import { AnimatePresence, motion, useInView } from "motion/react";
@@ -149,13 +147,13 @@ function LeadForm() {
           We'll Be In Touch Soon!
         </h3>
         <p className="text-muted-foreground font-body leading-relaxed">
-          Our healthcare marketing experts will contact you within 24 hours with
-          your personalised growth plan.
+          Our FnB marketing experts will contact you within 24 hours with your
+          personalised growth plan.
         </p>
         <div className="mt-6 p-4 bg-green-pale rounded-xl text-sm text-green-medium font-body">
           📞 Can't wait? Call us:{" "}
-          <a href="tel:09415890852" className="font-bold underline">
-            094158 90852
+          <a href="tel:9999764357" className="font-bold underline">
+            9999764357
           </a>
         </div>
       </motion.div>
@@ -173,7 +171,7 @@ function LeadForm() {
         </Label>
         <Input
           id="businessName"
-          placeholder="Your clinic or hospital name"
+          placeholder="Your restaurant or cafe name"
           value={formData.businessName}
           onChange={(e) =>
             setFormData((p) => ({ ...p, businessName: e.target.value }))
@@ -191,7 +189,7 @@ function LeadForm() {
         </Label>
         <Input
           id="name"
-          placeholder="Dr. / Your full name"
+          placeholder="Owner / Manager name"
           value={formData.name}
           onChange={(e) => setFormData((p) => ({ ...p, name: e.target.value }))}
           required
@@ -247,7 +245,7 @@ function LeadForm() {
         <Input
           id="email"
           type="email"
-          placeholder="doctor@clinic.com"
+          placeholder="owner@restaurant.com"
           value={formData.email}
           onChange={(e) =>
             setFormData((p) => ({ ...p, email: e.target.value }))
@@ -272,18 +270,20 @@ function LeadForm() {
             <SelectValue placeholder="Select your challenge" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="Low inquiry volume">
-              Low inquiry volume
+            <SelectItem value="Low footfall / table covers">
+              Low footfall / table covers
             </SelectItem>
-            <SelectItem value="Poor online visibility">
-              Poor online visibility
+            <SelectItem value="Poor Zomato / Swiggy visibility">
+              Poor Zomato / Swiggy visibility
             </SelectItem>
-            <SelectItem value="High marketing costs">
-              High marketing costs
+            <SelectItem value="No online ordering / delivery orders">
+              No online ordering / delivery orders
             </SelectItem>
-            <SelectItem value="Cannot track ROI">Cannot track ROI</SelectItem>
-            <SelectItem value="Need complete solution">
-              Need complete solution
+            <SelectItem value="Weak social media presence">
+              Weak social media presence
+            </SelectItem>
+            <SelectItem value="Need complete digital solution">
+              Need complete digital solution
             </SelectItem>
           </SelectContent>
         </Select>
@@ -343,20 +343,20 @@ export default function App() {
           <div className="flex items-center justify-between h-16 md:h-18">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-full bg-green-medium flex items-center justify-center">
-                <HeartPulse className="w-4 h-4 text-cream" />
+                <UtensilsCrossed className="w-4 h-4 text-cream" />
               </div>
               <span className="font-display font-bold text-lg text-green-deep tracking-tight">
-                Orange MonkE
+                Kishara Digital
               </span>
             </div>
 
             <div className="flex items-center gap-3">
               <a
-                href="tel:09415890852"
+                href="tel:9999764357"
                 className="hidden sm:flex items-center gap-2 text-sm font-medium text-green-medium hover:text-green-deep transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                094158 90852
+                9999764357
               </a>
               <Button
                 onClick={scrollToForm}
@@ -404,7 +404,8 @@ export default function App() {
                 className="inline-flex items-center gap-2 bg-white border border-green-medium/30 rounded-full px-4 py-2 text-sm font-medium text-green-medium shadow-xs mb-6 w-fit"
               >
                 <CheckCircle2 className="w-4 h-4 text-green-medium" />
-                Trusted by 100+ Doctors, Clinics & Hospitals Across India
+                Trusted by 150+ Restaurants, Cafes &amp; Cloud Kitchens Across
+                India
               </motion.div>
 
               <motion.h1
@@ -413,8 +414,11 @@ export default function App() {
                 transition={{ delay: 0.2 }}
                 className="font-display text-4xl md:text-5xl xl:text-6xl font-bold text-green-deep leading-[1.1] tracking-tight mb-5"
               >
-                Get <span className="text-green-medium">3X More Patients</span>{" "}
-                With Your Professional Online Presence
+                Get{" "}
+                <span className="text-green-medium">
+                  3X More Diners &amp; Delivery Orders
+                </span>{" "}
+                With Your Restaurant's Digital Presence
               </motion.h1>
 
               <motion.p
@@ -423,9 +427,9 @@ export default function App() {
                 transition={{ delay: 0.3 }}
                 className="text-base md:text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl"
               >
-                Stop losing patients to competitors who show up on Google. We
-                build your complete digital presence—professional website,
-                online booking, and Google visibility. More patients,
+                Stop losing customers to competitors who show up first on Zomato
+                and Google. We build your complete digital presence — restaurant
+                website, online ordering, and Google visibility. More customers,
                 automatically.
               </motion.p>
 
@@ -438,19 +442,19 @@ export default function App() {
                 {[
                   {
                     icon: Calendar,
-                    text: "More Patient Appointments. 24/7 online booking system that fills your calendar",
+                    text: "More Table Bookings. 24/7 online reservation system that fills every seat",
                   },
                   {
                     icon: Search,
-                    text: "Rank #1 on Google. Be the first provider patients find in your area",
+                    text: "Rank #1 on Google & Zomato. Be the first restaurant customers find nearby",
                   },
                   {
                     icon: Star,
-                    text: "Build Trust with Reviews. Showcase 5-star patient testimonials automatically",
+                    text: "Build Trust with Reviews. Showcase 5-star diner testimonials automatically",
                   },
                   {
                     icon: Globe,
-                    text: "Professional Website. Mobile-friendly site that converts visitors to patients",
+                    text: "Professional Restaurant Website. Mobile-friendly site with menu, photos & booking",
                   },
                 ].map(({ icon: Icon, text }) => (
                   <li key={text} className="flex items-start gap-3">
@@ -478,7 +482,7 @@ export default function App() {
                   Get Free Growth Plan
                   <ChevronRight className="ml-1 w-4 h-4" />
                 </Button>
-                <a href="tel:09415890852">
+                <a href="tel:9999764357">
                   <Button
                     variant="outline"
                     size="lg"
@@ -505,10 +509,10 @@ export default function App() {
               </div>
               <div className="text-center mb-6 pt-2">
                 <h2 className="font-display text-xl font-bold text-green-deep mb-1">
-                  Get Your Free Consultation
+                  Get Your Free Growth Plan
                 </h2>
                 <p className="text-sm text-muted-foreground font-body">
-                  See exactly how we'll get you more patients in 30 days
+                  See exactly how we'll get you more covers in 30 days
                 </p>
               </div>
               <LeadForm />
@@ -531,43 +535,44 @@ export default function App() {
               Real Results
             </Badge>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-green-deep mb-3">
-              Patient Footfall & Revenue Growth of Our Clients
+              Footfall &amp; Revenue Growth of Our Restaurant Clients
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Real results from real healthcare providers we've helped grow
+              Real results from real restaurant owners and cafe operators we've
+              helped grow
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                title: "Dental Clinic",
-                icon: "🦷",
-                badge: "20x Growth in 12 Months",
+                title: "Cafe Chain (3 Outlets)",
+                icon: "☕",
+                badge: "15x Growth in 10 Months",
                 stats: [
-                  { label: "Total Clicks", value: "20.5K" },
-                  { label: "Impressions", value: "1.13M" },
+                  { label: "Total Clicks", value: "18.2K" },
+                  { label: "Impressions", value: "960K" },
                 ],
                 color: "from-emerald-50 to-green-50",
               },
               {
-                title: "IVF Hospital",
-                icon: "🏥",
-                badge: "150% Growth in 5 Months",
+                title: "Cloud Kitchen",
+                icon: "🍱",
+                badge: "200% Growth in 4 Months",
                 stats: [
-                  { label: "Direction Requests", value: "2,038" },
-                  { label: "Growth Rate", value: "+150%" },
+                  { label: "Delivery Orders", value: "3,200" },
+                  { label: "Growth Rate", value: "+200%" },
                 ],
                 color: "from-teal-50 to-emerald-50",
                 featured: true,
               },
               {
-                title: "Hair Transplant Clinic",
-                icon: "💫",
-                badge: "7x Revenue Growth in 4 Years",
+                title: "Fine Dining Restaurant",
+                icon: "🍽️",
+                badge: "5x Revenue Growth in 3 Years",
                 stats: [
-                  { label: "Total Clicks", value: "55.1K" },
-                  { label: "Impressions", value: "4.8M" },
+                  { label: "Total Clicks", value: "42.3K" },
+                  { label: "Impressions", value: "3.2M" },
                 ],
                 color: "from-green-50 to-lime-50",
               },
@@ -620,8 +625,8 @@ export default function App() {
       <section className="dark-section py-12 md:py-16">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-            <StatCounter value={100} suffix="+" label="Healthcare Providers" />
-            <StatCounter value={5000} suffix="+" label="Patient Appointments" />
+            <StatCounter value={150} suffix="+" label="Restaurants" />
+            <StatCounter value={50000} suffix="+" label="Table Covers" />
             <StatCounter value={3} suffix="X" label="Average Growth" />
             <StatCounter value={30} suffix="" label="Days To See Results" />
           </div>
@@ -641,10 +646,11 @@ export default function App() {
               Why Us
             </Badge>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-green-deep mb-3">
-              Why Healthcare Providers Choose Orange MonkE
+              Why Restaurant Owners Choose Kishara Digital
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Digital marketing built for doctors, clinics & hospitals
+              Digital marketing built for cafes, restaurants &amp; cloud
+              kitchens
             </p>
           </motion.div>
 
@@ -653,22 +659,22 @@ export default function App() {
               {
                 icon: Zap,
                 title: "Complete Solution",
-                desc: "Everything you need in one place—website, SEO, reviews, booking system, and analytics. No juggling multiple agencies.",
+                desc: "Everything your restaurant needs in one place — website, Zomato listings, reviews, table booking, and analytics. No juggling multiple agencies.",
               },
               {
                 icon: Clock,
                 title: "Fast Results",
-                desc: "Most clients see measurable improvements within 30 days. Your new website goes live in 2 weeks.",
+                desc: "Most restaurant clients see measurable improvements within 30 days. Your new menu website goes live in 2 weeks.",
               },
               {
                 icon: BarChart3,
                 title: "Transparent ROI",
-                desc: "Clear monthly reports showing exactly how many patients found you online and the revenue generated.",
+                desc: "Clear monthly reports showing exactly how many diners found you online, dine-in covers, and delivery order revenue generated.",
               },
               {
                 icon: Shield,
                 title: "Dedicated Support",
-                desc: "Your own dedicated account manager who understands healthcare. Available 6 days a week.",
+                desc: "Your own account manager who understands the FnB industry — food photography, seasonal menus, and Zomato algorithms.",
               },
             ].map(({ icon: Icon, title, desc }, i) => (
               <motion.div
@@ -721,19 +727,19 @@ export default function App() {
                 step: "01",
                 icon: MessageSquare,
                 title: "Strategy Call",
-                desc: "We learn about your practice, your goals, and what makes you unique. A 30-minute call that changes everything.",
+                desc: "We learn about your restaurant, your cuisine, your goals, and what makes you unique. A 30-minute call that changes everything.",
               },
               {
                 step: "02",
                 icon: Globe,
                 title: "We Build Everything",
-                desc: "Our team builds your professional website, sets up your booking system, optimises your Google profile, and launches your review system.",
+                desc: "Our team builds your restaurant website with menu & photos, sets up your table booking system, optimises your Zomato/Swiggy listings, and launches your review system.",
               },
               {
                 step: "03",
                 icon: Users,
-                title: "Patients Start Coming",
-                desc: "New patients discover you on Google, book online 24/7, and your practice grows automatically every month.",
+                title: "Diners Start Coming",
+                desc: "New customers discover you on Google and Zomato, book tables or order online 24/7, and your restaurant grows automatically every month.",
               },
             ].map(({ step, icon: Icon, title, desc }, i) => (
               <motion.div
@@ -762,7 +768,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── SPECIALTIES ── */}
+      {/* ── BUSINESS TYPES ── */}
       <section className="py-12 md:py-16 bg-white">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
@@ -772,7 +778,7 @@ export default function App() {
             className="text-center mb-8"
           >
             <h2 className="font-display text-2xl md:text-3xl font-bold text-green-deep mb-2">
-              We Serve All Medical Specialties
+              We Serve All FnB Business Types
             </h2>
           </motion.div>
           <motion.div
@@ -783,24 +789,26 @@ export default function App() {
             className="flex flex-wrap justify-center gap-3"
           >
             {[
-              "🫀 Cardiologist",
-              "🧴 Dermatologist",
-              "🦴 Orthopedic",
-              "👶 Pediatrician",
-              "🦷 Dentist",
-              "👁️ Ophthalmologist",
-              "👩‍⚕️ Gynecologist",
-              "⚕️ All Specialists",
-            ].map((specialty, i) => (
+              "☕ Cafe",
+              "🍽️ Restaurant",
+              "🍱 Cloud Kitchen",
+              "🍕 QSR / Fast Food",
+              "🥐 Bakery",
+              "🍹 Bar & Grill",
+              "🏨 Hotel F&B",
+              "🚚 Food Truck",
+              "🍣 Fine Dining",
+              "🌮 All FnB Businesses",
+            ].map((type, i) => (
               <motion.div
-                key={specialty}
+                key={type}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
               >
                 <Badge className="bg-green-pale text-green-deep border border-green-medium/20 px-4 py-2 text-sm font-medium hover:bg-green-medium hover:text-cream transition-colors cursor-default">
-                  {specialty}
+                  {type}
                 </Badge>
               </motion.div>
             ))}
@@ -821,7 +829,7 @@ export default function App() {
               Our Services
             </Badge>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-green-deep mb-3">
-              Everything Your Practice Needs to Grow Online
+              Everything Your Restaurant Needs to Grow Online
             </h2>
           </motion.div>
 
@@ -829,67 +837,67 @@ export default function App() {
             {[
               {
                 icon: Globe,
-                title: "Professional Medical Website",
+                title: "Professional Restaurant Website",
                 features: [
-                  "Custom design for your specialty",
+                  "Custom design with your menu",
                   "Mobile-first, fast-loading",
-                  "Patient trust-building elements",
-                  "Doctor profiles & credentials",
-                  "Treatment & service pages",
+                  "Online table reservation system",
+                  "Food photography showcase",
+                  "Location & hours pages",
                 ],
               },
               {
                 icon: Calendar,
-                title: "Online Appointment Booking",
+                title: "Online Table Booking & Ordering",
                 features: [
-                  "24/7 automated booking system",
-                  "Calendar sync & reminders",
+                  "24/7 automated reservation system",
+                  "Calendar sync & booking reminders",
                   "Reduce no-shows by 60%",
-                  "Multiple doctor scheduling",
-                  "SMS/email confirmations",
+                  "Online ordering / takeaway page",
+                  "Order confirmation messages",
                 ],
               },
               {
                 icon: Search,
-                title: "Local SEO & Google Rankings",
+                title: "Zomato, Swiggy & Google Visibility",
                 features: [
                   "Google Business Profile optimization",
+                  "Zomato & Swiggy listing optimization",
                   "Local keyword targeting",
                   "Google Maps ranking",
                   "Monthly SEO audits",
-                  "Competitor analysis",
                 ],
               },
               {
                 icon: Star,
-                title: "Patient Reviews & Reputation",
+                title: "Diner Reviews & Reputation",
                 features: [
                   "Automated review collection",
                   "Respond to reviews at scale",
-                  "Suppress negative feedback",
                   "Showcase on your website",
+                  "Zomato rating improvement",
                   "Google rating improvement",
                 ],
               },
               {
                 icon: MessageCircle,
-                title: "Social Media Presence",
+                title: "Social Media & Content",
                 features: [
-                  "Health education content",
+                  "Food & ambiance content creation",
                   "Instagram & Facebook management",
-                  "Patient success stories",
-                  "Awareness campaign posts",
+                  "Reels & short video content",
+                  "Menu launch campaigns",
                   "Community engagement",
                 ],
               },
               {
                 icon: BarChart3,
-                title: "Patient Analytics & Tracking",
+                title: "Restaurant Analytics & Tracking",
                 features: [
                   "Monthly performance reports",
-                  "Patient acquisition tracking",
+                  "Customer acquisition tracking",
                   "ROI measurement dashboard",
-                  "Conversion rate analysis",
+                  "Delivery vs dine-in analysis",
                   "Competitor benchmarking",
                 ],
               },
@@ -945,8 +953,9 @@ export default function App() {
                 Success Story
               </Badge>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-cream mb-4">
-                How a Dermatologist in Mumbai Got{" "}
-                <span className="text-gold">127 New Patients</span> in 2 Months
+                How a Mumbai Restaurant Got{" "}
+                <span className="text-gold">312 New Table Covers</span> in 2
+                Months
               </h2>
             </motion.div>
 
@@ -958,9 +967,9 @@ export default function App() {
               className="grid grid-cols-2 md:grid-cols-4 gap-4 my-10"
             >
               {[
-                { value: "127", label: "New Patients", icon: Users },
-                { value: "2,450", label: "Website Visitors", icon: Globe },
-                { value: "#1", label: "Google Ranking", icon: Search },
+                { value: "312", label: "New Covers", icon: Users },
+                { value: "5,800", label: "Website Visitors", icon: Globe },
+                { value: "#1", label: "Zomato Ranking", icon: Search },
                 { value: "60", label: "Days To Full Results", icon: Clock },
               ].map(({ value, label, icon: Icon }) => (
                 <div
@@ -987,23 +996,23 @@ export default function App() {
                 "
               </div>
               <p className="text-cream/90 text-lg md:text-xl leading-relaxed font-body italic mb-6">
-                Before Orange MonkE, I was completely invisible online. Within
-                60 days, I was ranking #1 for dermatologist in Andheri, and my
-                appointment book was full for the next month. The ROI is
+                Before Kishara Digital, we were empty on weekdays. Within 60
+                days, we were ranking #1 for restaurants in Bandra, and our
+                tables were booked out for the entire week. The ROI is
                 absolutely incredible.
               </p>
               <div className="flex items-center justify-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-gold/30 flex items-center justify-center">
                   <span className="text-gold font-bold text-lg font-display">
-                    P
+                    R
                   </span>
                 </div>
                 <div className="text-left">
                   <div className="font-display font-bold text-cream">
-                    Dr. Priya Malhotra
+                    Rahul Mehta
                   </div>
                   <div className="text-cream/60 text-sm font-body">
-                    Dermatologist, Mumbai
+                    Restaurant Owner, Mumbai
                   </div>
                 </div>
               </div>
@@ -1025,36 +1034,36 @@ export default function App() {
               Testimonials
             </Badge>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-green-deep mb-3">
-              What Healthcare Providers Say About Us
+              What Restaurant Owners Say About Us
             </h2>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                name: "Dr. Rajesh Kumar",
-                title: "Orthopedic Surgeon, Delhi",
-                initials: "RK",
+                name: "Sanjay Verma",
+                title: "Cafe Owner, Delhi",
+                initials: "SV",
                 review:
-                  "Orange MonkE transformed our hospital's online presence completely. Our Google ranking jumped from page 5 to #1 in just 3 months. We're now getting 40+ new patient enquiries per week through our website alone.",
-                growth: "+180% Patient Enquiries",
+                  "Kishara Digital completely transformed our cafe's online presence. We went from page 5 to #1 on Google in 3 months. We're now getting 60+ new table booking requests per week through our website alone.",
+                growth: "+200% Bookings",
               },
               {
-                name: "Dr. Priya Sharma",
-                title: "IVF Specialist, Bangalore",
-                initials: "PS",
+                name: "Priya Nair",
+                title: "Cloud Kitchen, Bangalore",
+                initials: "PN",
                 review:
-                  "The team really understands healthcare marketing. They created a sensitive, trust-building online presence for our IVF clinic. Our consultation bookings doubled in the first 2 months. The ROI tracking dashboard is excellent.",
-                growth: "2X Consultations",
+                  "The team really understands restaurant marketing. They optimised our Zomato listing and built a delivery-first website for our cloud kitchen. Our daily orders doubled in the first 2 months. The ROI tracking dashboard is excellent.",
+                growth: "2X Daily Orders",
                 featured: true,
               },
               {
-                name: "Dr. Amit Patel",
-                title: "Dental Clinic, Ahmedabad",
-                initials: "AP",
+                name: "Amit Shah",
+                title: "Fine Dining, Ahmedabad",
+                initials: "AS",
                 review:
-                  "I was sceptical at first, but the results speak for themselves. 127 new patients in 3 months, #1 on Google for 5 dental keywords, and our revenue has grown 60%. Best investment I've made for my clinic.",
-                growth: "127 New Patients",
+                  "I was sceptical at first, but the results speak for themselves. 312 new covers in 3 months, #1 on Google for 5 restaurant keywords, and our revenue has grown 80%. Best investment I've made for my restaurant.",
+                growth: "312 New Covers",
               },
             ].map(({ name, title, initials, review, growth, featured }, i) => (
               <motion.div
@@ -1153,22 +1162,22 @@ export default function App() {
                 {
                   id: "results",
                   q: "How long does it take to see results?",
-                  a: "Most clients see measurable improvements within the first 30 days—more website traffic, more enquiries, and improved Google rankings. Significant patient growth typically begins in months 2–3. For SEO, we set realistic expectations: meaningful ranking improvements appear between 60–90 days depending on your city and competition.",
+                  a: "Most restaurant clients see measurable improvements within the first 30 days — more website traffic, more table booking enquiries, and improved Google and Zomato rankings. Significant diner growth and increased covers typically begin in months 2–3. For SEO, meaningful ranking improvements appear between 60–90 days depending on your city and competition.",
                 },
                 {
                   id: "technical",
                   q: "Do I need to have any technical knowledge?",
-                  a: "Absolutely not. We handle everything from start to finish—website design, SEO setup, Google Business Profile, review system, and analytics. You focus on treating patients; we handle the digital marketing. You'll receive a simple monthly report showing exactly what we've done and the results achieved.",
+                  a: "Absolutely not. We handle everything from start to finish — website design, menu pages, Zomato/Swiggy optimisation, table booking setup, and analytics. You focus on running your restaurant; we handle the digital marketing. Any menu updates or changes can be requested easily, and you'll receive a simple monthly report showing exactly what we've done.",
                 },
                 {
                   id: "difference",
                   q: "What makes you different from other marketing agencies?",
-                  a: "We specialise exclusively in healthcare marketing. We understand HIPAA-compliant content, medical ethics in advertising, and the specific needs of doctors, clinics, and hospitals. Generic agencies don't understand why certain messaging resonates with patients seeking healthcare versus retail customers.",
+                  a: "We specialise in FnB and restaurant marketing. We understand food photography, seasonal menu promotions, Zomato and Swiggy algorithms, and what drives diners to choose one restaurant over another. Generic agencies don't understand why a beautifully photographed dish drives more covers than a generic banner ad.",
                 },
                 {
                   id: "existing",
                   q: "Can you help if I already have a website?",
-                  a: "Yes, absolutely. We can audit and optimise your existing website, or rebuild it from scratch depending on what's needed. Many of our clients come with an existing website that isn't converting visitors into patients—we fix that. We'll tell you honestly what needs to change.",
+                  a: "Yes, absolutely. We can audit and optimise your existing website, or rebuild it from scratch depending on what's needed. Many of our restaurant clients come with an existing website that isn't converting visitors into diners or delivery orders — we fix that. We'll tell you honestly what needs to change.",
                 },
                 {
                   id: "contract",
@@ -1244,17 +1253,17 @@ export default function App() {
                   </div>
                 </div>
                 <Badge className="bg-gold/20 text-gold border-gold/30 px-4 py-2 text-sm w-fit">
-                  Most Popular for Clinics
+                  Most Popular for Restaurants &amp; Cafes
                 </Badge>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-3 mb-8">
                 {[
-                  "Professional medical website (custom design)",
-                  "Online appointment booking system",
+                  "Professional restaurant website (custom design)",
+                  "Online table booking & ordering page",
                   "Google Business Profile optimisation",
-                  "Local SEO & keyword targeting",
-                  "Patient review collection system",
+                  "Zomato & Swiggy listing management",
+                  "Diner review collection system",
                   "Social media content (8 posts/month)",
                   "Monthly analytics & ROI report",
                   "Dedicated account manager",
@@ -1297,16 +1306,16 @@ export default function App() {
             viewport={{ once: true }}
           >
             <div className="w-16 h-16 rounded-full bg-green-medium mx-auto mb-6 flex items-center justify-center shadow-green">
-              <HeartPulse className="w-8 h-8 text-cream" />
+              <UtensilsCrossed className="w-8 h-8 text-cream" />
             </div>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-green-deep mb-4">
-              Ready to Get More Patients?
+              Ready to Get More Diners?
             </h2>
             <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto font-body">
-              Join 100+ healthcare providers who've transformed their patient
-              acquisition with Orange MonkE's proven digital marketing system.
-              Your competitors are already online — don't let them take your
-              patients.
+              Join 150+ restaurant and cafe owners who've transformed their
+              customer acquisition with Kishara Digital's proven digital
+              marketing system. Your competitors are already online — don't let
+              them take your tables.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -1317,14 +1326,14 @@ export default function App() {
                 Get My Free Growth Plan
                 <ChevronRight className="ml-1 w-4 h-4" />
               </Button>
-              <a href="tel:09415890852">
+              <a href="tel:9999764357">
                 <Button
                   variant="outline"
                   size="lg"
                   className="h-12 px-8 border-green-medium text-green-medium hover:bg-green-pale w-full sm:w-auto"
                 >
                   <Phone className="mr-2 w-4 h-4" />
-                  Or call us: 094158 90852
+                  Or call us: 9999764357
                 </Button>
               </a>
             </div>
@@ -1339,22 +1348,23 @@ export default function App() {
             <div className="text-center md:text-left">
               <div className="flex items-center gap-2 justify-center md:justify-start mb-2">
                 <div className="w-7 h-7 rounded-full bg-cream/10 flex items-center justify-center">
-                  <HeartPulse className="w-4 h-4 text-gold" />
+                  <UtensilsCrossed className="w-4 h-4 text-gold" />
                 </div>
                 <span className="font-display font-bold text-lg">
-                  Orange MonkE
+                  Kishara Digital
                 </span>
               </div>
               <p className="text-cream/60 text-sm font-body">
-                Digital Marketing Agency for Doctors, Clinics & Hospitals
+                Digital Marketing Agency for Restaurants, Cafes &amp; Cloud
+                Kitchens
               </p>
               <p className="text-cream/50 text-xs mt-1 font-body">
                 Contact:{" "}
                 <a
-                  href="tel:09415890852"
+                  href="tel:9999764357"
                   className="hover:text-gold transition-colors"
                 >
-                  094158 90852
+                  9999764357
                 </a>
               </p>
             </div>
@@ -1371,7 +1381,7 @@ export default function App() {
                   type="button"
                   className="hover:text-cream transition-colors font-body cursor-pointer"
                 >
-                  Terms & Conditions
+                  Terms &amp; Conditions
                 </button>
                 <button
                   type="button"
@@ -1382,7 +1392,8 @@ export default function App() {
                 </button>
               </div>
               <p className="text-cream/40 text-xs font-body">
-                © {new Date().getFullYear()} Orange MonkE. All rights reserved.
+                © {new Date().getFullYear()} Kishara Digital. All rights
+                reserved.
               </p>
               <p className="text-cream/30 text-xs font-body">
                 Built with ❤️ using{" "}
@@ -1402,7 +1413,7 @@ export default function App() {
 
       {/* ── FLOATING WHATSAPP ── */}
       <motion.a
-        href="https://wa.me/+919415890852"
+        href="https://wa.me/+919999764357"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
